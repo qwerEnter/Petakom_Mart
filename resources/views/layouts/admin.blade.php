@@ -35,21 +35,21 @@
         <ul class="nav">
         <li @if(Request::is('admin/dashboard')) class="active" @endif>
         <a href="{{ url('/admin/dashboard') }}">
-         <i class="now-ui-icons design_bullet-list-67"></i>
+         <i class="now-ui-icons design_app"></i>
         <p>Dashboard</p>
         </a>
         </li>
 
         <li @if(Request::is('admin/userprofile')) class="active" @endif>
         <a href="{{ url('/admin/userprofile') }}">
-         <i class="now-ui-icons design_bullet-list-67"></i>
+         <i class="now-ui-icons users_single-02"></i>
         <p>User Profile</p>
         </a>
         </li>
 
         <li @if(Request::is('admin/schedule')) class="active" @endif>
         <a href="{{ url('/admin/schedule') }}">
-         <i class="now-ui-icons design_bullet-list-67"></i>
+         <i class="now-ui-icons ui-1_calendar-60"></i>
         <p>Schedule</p>
         </a>
         </li>
@@ -57,7 +57,7 @@
 
         <li @if(Request::is('admin/inventory')) class="active" @endif>
         <a href="{{ url('/admin/inventory') }}">
-         <i class="now-ui-icons design_bullet-list-67"></i>
+         <i class="now-ui-icons shopping_box"></i>
         <p>Inventory</p>
         </a>
         </li>
@@ -65,14 +65,14 @@
 
         <li @if(Request::is('admin/sales')) class="active" @endif>
         <a href="{{ url('/admin/sales') }}">
-         <i class="now-ui-icons design_bullet-list-67"></i>
+         <i class="now-ui-icons shopping_credit-card"></i>
         <p>Sales</p>
         </a>
         </li>
 
         <li @if(Request::is('admin/delivery')) class="active" @endif>
         <a href="{{ url('/admin/delivery') }}">
-         <i class="now-ui-icons design_bullet-list-67"></i>
+         <i class="now-ui-icons shopping_box"></i>
         <p>Delivery</p>
         </a>
         </li>
