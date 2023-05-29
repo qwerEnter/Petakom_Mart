@@ -37,7 +37,7 @@ UserProfile | Admin
                           Dakota Rice
                         </td>
                         <td>
-                          Niger
+                          Nigere
                         </td>
                         <td>
                           Oud-Turnhouta
