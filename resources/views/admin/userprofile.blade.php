@@ -40,7 +40,7 @@ UserProfile | Admin
                           Niger
                         </td>
                         <td>
-                          Oud-Turnhout
+                          Oud-Turnhouta
                         </td>
                         <td class="text-right">
                           $36,738
