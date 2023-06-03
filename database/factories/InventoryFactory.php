@@ -24,7 +24,7 @@ class InventoryFactory extends Factory
     {
         return [
             'expired_date' => $this->faker->date(),
-            'quantity' => $this->faker->randomNumber(),
+            'quantity' => $this->faker->numberBetween(0, 100),
             'product_id' => \App\Models\Product::factory(),
         ];
     }

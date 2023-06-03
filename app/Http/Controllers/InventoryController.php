@@ -13,7 +13,10 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        return view('admin.inventory');
+        $inventories = Inventory::all();
+
+        return view('admin.inventory', ['inventories' => $inventories]);
+        
     }
 
     /**
@@ -21,7 +24,10 @@ class InventoryController extends Controller
      */
     public function create()
     {
-        return view('manageinventory.addinventory');
+        $inventories = Inventory::all();
+
+        return view('manageinventory.addinventory', ['inventories' => $inventories]);
+        // return view('manageinventory.addinventory');
     }
 
     /**

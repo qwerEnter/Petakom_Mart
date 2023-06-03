@@ -23,7 +23,7 @@ class EmployeeFactory extends Factory
     public function definition(): array
     {
         return [
-            'matric_no' => $this->faker->text(255),
+            'matric_no' => $this->faker->bothify('??#####'),
             'employment_type' => 'part_time',
             'user_id' => \App\Models\User::factory(),
         ];
