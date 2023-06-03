@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InventoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -15,8 +16,10 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.dashboard');
 });
+
+Route::resource('admin/inventories', InventoryController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', function () {
@@ -26,4 +29,4 @@ Route::middleware(['auth:sanctum', 'verified'])
 
 Route::prefix('/')
     ->middleware(['auth:sanctum', 'verified'])
-    ->group(function () {});
+    ->group(function () { });
