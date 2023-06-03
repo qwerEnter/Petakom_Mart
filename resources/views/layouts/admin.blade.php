@@ -56,7 +56,7 @@
 
 
         <li @if(Request::is('admin/inventory')) class="active" @endif>
-        <a href="{{ url('/admin/inventory') }}">
+        <a href="{{ route('inventories.index') }}">
          <i class="now-ui-icons shopping_box"></i>
         <p>Inventory</p>
         </a>

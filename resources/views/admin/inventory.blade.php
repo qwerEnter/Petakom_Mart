@@ -12,41 +12,126 @@ Inventory | Admin
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Invenotryyyyyy List</h4>
+                <h3 class="card-title"> Inventory Details</h3>
+                <td>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a class='btn btn-primary me-md-2' href="{{ route('inventories.create') }}">Add</a>
+                    
+                </td>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
+                     <tbody>
                       <th>
-                        No.
-                      </th>
-                      <th>
-                        Matric No.
+                        Inventory ID
                       </th>
                       <th>
                         Name
                       </th>
-                      <th class="text-right">
-                        Work Type
+                      <th>
+                        Price 
                       </th>
+                      <th>
+                        Stock Level
+                      </th>
+                      <th class>
+                        Action
+                      </th>
+                      </tbody>
                     </thead>
                     <tbody>
                       <tr>
                         <td>
-                          Dakota Rice
+                          PID1005
                         </td>
                         <td>
-                          Niger
+                          Milo
                         </td>
                         <td>
-                          Oud-Turnhout
+                          RM2.00
                         </td>
-                        <td class="text-right">
-                          $36,738
+                        <td>
+                          10
+                        </td>
+                        <td>
+                          <div class='btn-group'>
+                          
+                          </div>
                         </td>
                       </tr>
-                      
+                      <tbody>
+                      <tr>
+                        <td>
+                          PID1006
+                        </td>
+                        <td>
+                          Maggie Cup
+                        </td>
+                        <td>
+                          RM2.50
+                        </td>
+                        <td>
+                          8
+                        </td>
+                        <td>
+                          <div class='btn-group'>
+                          <a type='button' class='btn btn-success' href="{{ url('/admin/inventory/edit') }}">Edit</a>
+                          <a type='button' class='btn btn-info' href="{{ url('/admin/inventory/view') }}">View</a>
+                            <a type='button' class='btn btn-warning' href="{{ url('/admin/inventory/update') }}">Update</a>
+                            <a type='button' class='btn btn-danger' href="{{ url('/admin/inventory/delete') }}">Delete</a>
+                          </div>
+                        </td>
+                      </tr>  
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td>
+                          PID1007
+                        </td>
+                        <td>
+                          Roti
+                        </td>
+                        <td>
+                          RM1.90
+                        </td>
+                        <td>
+                          5
+                        </td>
+                        <td>
+                          <div class='btn-group'>
+                          <a type='button' class='btn btn-success' href="{{ url('/admin/inventory/edit') }}">Edit</a>
+                          <a type='button' class='btn btn-info' href="{{ url('/admin/inventory/view') }}">View</a>
+                            <a type='button' class='btn btn-warning' href="{{ url('/admin/inventory/update') }}">Update</a>
+                            <a type='button' class='btn btn-danger' href="{{ url('/admin/inventory/delete') }}">Delete</a>
+                          </div>
+                        </td>
+                      </tr>  
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td>
+                          PID1008
+                        </td>
+                        <td>
+                          Nescafe
+                        </td>
+                        <td>
+                          RM2.00
+                        </td>
+                        <td>
+                          6
+                        </td>
+                        <td>
+                          <div class='btn-group'>
+                            <a type='button' class='btn btn-success' href="{{ url('/admin/inventory/edit') }}">Edit</a>
+                            <a type='button' class='btn btn-info' href="{{ url('/admin/inventory/view') }}">View</a>
+                            <a type='button' class='btn btn-warning' href="{{ url('/admin/inventory/update') }}">Update</a>
+                            <a type='button' class='btn btn-danger' href="{{ url('/admin/inventory/delete') }}">Delete</a>
+                          </div>
+                        </td>
+                      </tr>  
                     </tbody>
                   </table>
                 </div>
@@ -59,47 +144,3 @@ Inventory | Admin
 @endsection
 
 
-@section('content2')
-
-<div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title"> Invenotryyyyyy List</h4>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        No.
-                      </th>
-                      <th>
-                        Meetup Point
-                      </th>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          Niger
-                        </td>
-                       
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          
-         
-@endsection
-
-@section('scripts')
-@endsection
