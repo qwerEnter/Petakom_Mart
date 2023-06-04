@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Delivery extends Model
 {
-<<<<<<< HEAD
+
     public $timestamps = false;
     
-=======
+
     use HasFactory;
     use Searchable;
     use SoftDeletes;
@@ -30,5 +30,5 @@ class Delivery extends Model
     {
         return $this->belongsTo(MeetupPoint::class);
     }
->>>>>>> 306b0884018c0fa3122b5d49135e1e9473e5b54d
+
 }
