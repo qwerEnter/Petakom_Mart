@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Inventory;
 use App\Http\Requests\StoreInventoryRequest;
 use App\Http\Requests\UpdateInventoryRequest;
+use App\Views\ManageInventory;
+
 
 class InventoryController extends Controller
 {
@@ -24,9 +26,9 @@ class InventoryController extends Controller
      */
     public function create()
     {
-        $inventories = Inventory::all();
+       
 
-        return view('manageinventory.addinventory', ['inventories' => $inventories]);
+        return view('manageinventory.addinventory'); 
         // return view('manageinventory.addinventory');
     }
 

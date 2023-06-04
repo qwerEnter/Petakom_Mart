@@ -19,7 +19,9 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
-Route::resource('admin/inventories', InventoryController::class);
+Route::resource('manageinventory/inventories', InventoryController::class);
+
+Route::resource('admin/delivery', DeliveryController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', function () {

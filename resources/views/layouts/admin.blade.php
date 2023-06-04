@@ -159,6 +159,7 @@
 
 
   @yield('scripts')
+  @yield('styles')
 </body>
 
 
