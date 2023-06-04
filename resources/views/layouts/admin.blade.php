@@ -127,15 +127,10 @@
       </div>
       
       <div class="content">
-
-      @yield('content')
-        
+      @yield('content')  
       </div>
-      <div class="content">
 
-      @yield('content2')
-        
-      </div>
+      
 
 
       
@@ -155,12 +150,28 @@
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  
+  <!-- untuk modal add cashier -->
+  <script>
+  $(document).ready(function() {
+    $('#exampleModal').modal('hide'); // Optional: Hide the modal by default
+    $('.btn-primary[data-bs-toggle="modal"]').click(function() {
+      $('#exampleModal').modal('show'); // Show the modal when the button is clicked
+    });
+  });
+</script>
+
+<!-- untuk modal add meetup -->
+<script>
+  $(document).ready(function() {
+    $('#exampleModal2').modal('hide'); // Optional: Hide the modal by default
+    $('.btn-primary[data-bs-toggle="modal2"]').click(function() {
+      $('#exampleModal2').modal('show'); // Show the modal when the button is clicked
+    });
+  });
+</script>
 
 
-
-  @yield('scripts')
+@yield('scripts')
 </body>
-
-
-
 </html>
