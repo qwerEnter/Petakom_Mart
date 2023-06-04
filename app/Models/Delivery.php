@@ -11,15 +11,6 @@ class Delivery extends Model
 {
 <<<<<<< HEAD
     public $timestamps = false;
-
-    //use HasFactory;
-    
-    //for view  cashier in schedlues
-    protected $table = 'schedules';
-    // protected $table2 = 'meetup_points';
-
-    //for adding new cashier in schedlues
-    protected $fillable = ['matric_no','name','work_type'];
     
 =======
     use HasFactory;
