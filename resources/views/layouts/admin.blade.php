@@ -56,7 +56,7 @@
 
 
         <li @if(Request::is('admin/inventory')) class="active" @endif>
-        <a href="{{ url('/admin/inventory') }}">
+        <a href="{{ route('inventories.index') }}">
          <i class="now-ui-icons shopping_box"></i>
         <p>Inventory</p>
         </a>
@@ -172,6 +172,12 @@
 </script>
 
 
+<<<<<<< HEAD
 @yield('scripts')
+=======
+
+  @yield('scripts')
+  @yield('styles')
+>>>>>>> 306b0884018c0fa3122b5d49135e1e9473e5b54d
 </body>
 </html>
