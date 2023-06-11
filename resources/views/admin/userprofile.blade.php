@@ -37,10 +37,10 @@ UserProfile | Admin
                           Dakota Rice
                         </td>
                         <td>
-                          Niger
+                          Nigere
                         </td>
                         <td>
-                          Oud-Turnhout
+                          Oud-Turnhouta
                         </td>
                         <td class="text-right">
                           $36,738

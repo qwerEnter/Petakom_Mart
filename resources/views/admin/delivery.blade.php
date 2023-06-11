@@ -85,7 +85,7 @@ Delivery | Admin
                           Dakota Rice
                         </td>
                         <td>
-                          Niger
+                          MISKINNNN
                         </td>
                        
                       </tr>
