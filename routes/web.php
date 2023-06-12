@@ -28,6 +28,8 @@ Route::resource('manageinventory/inventories', InventoryController::class);
 
 Route::resource('admin/delivery', DeliveryController::class);
 
+Route::resource('admin/sales', CashierController::class);
+
 
 // //for display cashier catch index
 // Route::get('/admin/delivery', [DeliveryController::class, 'index']);

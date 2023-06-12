@@ -12,8 +12,9 @@ class CashierController extends Controller
     //view cashier
     public function index()
     {
-        $data = Schedule::all(); // Retrieve all schedules from the database
-        return view('admin.delivery', compact('data'));
+        $Cashiers = Cashier::all();
+
+        return view('admin.sales', ['cashier' => $Cashiers]);
     }
 
 
