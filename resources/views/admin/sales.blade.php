@@ -79,60 +79,13 @@
                 border-top: none;
             }
 
-            table {
+            table{
                 width: 80%;
             }
 
-            tr,
-            th {
+            tr,th{
                 text-align: left;
             }
-
-            .selected {
-                background-color: blue;
-            }
-
-            /*Overlay Style for Confirm*/
-            .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                /* semi-transparent background */
-                z-index: 9999;
-                display: none;
-                /* hide the overlay by default */
-            }
-
-            .popup {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 5px;
-                text-align: center;
-            }
-
-            .button-container {
-                margin-top: 20px;
-            }
-
-            .popup button {
-                margin: 0 10px;
-            }
-
-            .popup h2 {
-                margin-top: 0;
-            }
-
-            .popup p {
-                margin-bottom: 10px;
-            }
-
         </style>
     </head>
 
@@ -140,7 +93,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Sales Cashier</h3>
+                    <h3 class="card-title">Inventory Details</h3>
                     <td>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a class='btn btn-primary me-md-2' href="{{ route('inventories.create') }}">Report</a>
@@ -203,7 +156,17 @@
                                             onkeydown="myFunction(event)">
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><input type="button" value="+" onclick="dis('+')"
+                                            onkeydown="myFunction(event)">
+                                    </td>
+                                    <td><input type="button" value="-" onclick="dis('-')"
+                                            onkeydown="myFunction(event)">
+                                    </td>
+                                    <!-- solve function call function solve to evaluate value -->
+                                    <td colspan="2"><input type="button" value="=" onclick="solve()"> </td>
 
+                                </tr>
                                 <tr>
                                     <td colspan="2"><input type="button" value="Enter" onclick="dis('Enter')"
                                             onkeydown="myFunction(event)">
@@ -214,8 +177,8 @@
                                 </tr>
                                 <tr>
                                     <td colspan="4"><input type="button" value="Confirm Payment"
-                                            onclick="showOverlay()"></td>
-
+                                            onclick="dis('Confirm Payment')" onkeydown="myFunction(event)">
+                                    </td>
                                 </tr>
                             </table>
                             <script>
@@ -275,7 +238,7 @@
                         </div>
                     </div>
 
-                    <div class="tab" style="width: 68%">
+                    <div class="tab">
                         <button class="tablinks" onclick="openCity(event, 'General')">General</button>
                         <button class="tablinks" onclick="openCity(event, 'Food')">Food</button>
                         <button class="tablinks" onclick="openCity(event, 'Beverages')">Beverages</button>
@@ -283,192 +246,78 @@
                         <button class="tablinks" onclick="openCity(event, 'Printing')">Printing</button>
                     </div>
 
-                    <!-- Add a div for the popup overlay -->
-                    <div id="overlay" class="overlay">
-                        <div class="popup">
-                            <h2>Confirm Payment</h2>
-                            <p>Are you sure to continue with the payment?</p>
-                            <div class="button-container">
-                                <button onclick="confirmPayment(true)"
-                                    onkeydown="myFunction(event)>Yes</button>
-                                <button onclick="confirmPayment(false)">No</button>
-                            </div>
-                        </div>
-                    </div>
-
                     <div id="General" class="tabcontent" style="height: 100%; float: left; width: 68%">
                         <h3>General</h3>
                         <table>
                             <tr>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('FK Pen', 1.20, this)">
+                                <td style="border-style: solid; margin-right: 50px;">
+                                    <div class="container">
                                         <img src="{{ asset('assets/img/fkpen.png') }}" alt="fkpen"
                                             style="height: 100px; width: 100px;">
                                         <h4>FK Pen</h4>
                                         <h5>RM1.20</h5>
                                     </div>
                                 </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('FK Pencil', 1.00, this)">
-                                        <img src="{{ asset('assets/img/fkpencil.png') }}" alt="fklanyard"
+                                <td>
+                                    <div class="container">
+                                        <img src="{{ asset('assets/img/fklanyard.png') }}" alt="fklanyard"
                                             style="height: 100px; width: 100px;">
                                         <h4>FK Pencil</h4>
                                         <h5>RM1.00</h5>
                                     </div>
                                 </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('FK Glue', 1.50, this)">
+                                <td>
+                                    <div class="container">
                                         <img src="{{ asset('assets/img/fkglue.png') }}" alt="fkglue"
                                             style="height: 100px; width: 100px;">
                                         <h4>FK Glue</h4>
                                         <h5>RM1.50</h5>
                                     </div>
                                 </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('FK Lanyard', 5.00, this)">
+                                <td>
+                                    <div class="container">
                                         <img src="{{ asset('assets/img/fklanyard.png') }}" alt="fklanyard"
                                             style="height: 100px; width: 100px;">
                                         <h4>FK Lanyard</h4>
                                         <h5>RM5.00</h5>
                                     </div>
                                 </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('FK Card Holder', 3.00, this)">
+                                <td>
+                                    <div class="container">
                                         <img src="{{ asset('assets/img/fkcardholder.jpg') }}" alt="fkcardholder"
                                             style="height: 100px; width: 100px;">
                                         <h4>FK Card Holder</h4>
                                         <h5>RM3.00</h5>
                                     </div>
                                 </td>
+
                             </tr>
                         </table>
                     </div>
 
-
-                    <div id="Food" class="tabcontent" style="height: 100%; float: left; width: 68%">
+                    <div id="Food" class="tabcontent">
                         <h3>Food</h3>
-                        <table>
-                            <tr>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('Maggi Cup', 1.50, this)">
-                                        <img src="{{ asset('assets/img/megi.jpg') }}" alt="megi"
-                                            style="height: 100px; width: 100px;">
-                                        <h4>Maggi Cup</h4>
-                                        <h5>RM1.50</h5>
-                                    </div>
-                                </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('Apollo Assorted Flavours', 1.00, this)">
-                                        <img src="{{ asset('assets/img/apollo.jpg') }}" alt="apollo"
-                                            style="height: 100px; width: 100px;">
-                                        <h4>Apollo Assorted Flavours</h4>
-                                        <h5>RM1.00</h5>
-                                    </div>
-                                </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('Buah Potong', 5.50, this)">
-                                        <img src="{{ asset('assets/img/buah.jpg') }}" alt="buahpotong"
-                                            style="height: 100px; width: 100px;">
-                                        <h4>Buah Potong</h4>
-                                        <h5>RM5.50</h5>
-                                    </div>
-                                </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('Kacang Paket', 0.50, this)">
-                                        <img src="{{ asset('assets/img/kacang.jpg') }}" alt="kacang"
-                                            style="height: 100px; width: 100px;">
-                                        <h4>Kacang Paket</h4>
-                                        <h5>RM0.50</h5>
-                                    </div>
-                                </td>
-                                <td style="border-style: solid;">
-                                    <div class="container" onclick="selectItem('Roti Paket', 2.00, this)">
-                                        <img src="{{ asset('assets/img/rotipaket.jpg') }}" alt="roti"
-                                            style="height: 100px; width: 100px;">
-                                        <h4>Roti Paket</h4>
-                                        <h5>RM2.00</h5>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
 
                     </div>
 
-                    <div id="Beverages" class="tabcontent" style="height: 100%; float: left; width: 68%">
+                    <div id="Beverages" class="tabcontent">
                         <h3>Beverages</h3>
                         <div class="container">
-                            <table>
-                                <tr>
-                                    <td style="border-style: solid;">
-                                        <div class="container" onclick="selectItem('Air Mineral', 1.30, this)">
-                                            <img src="{{ asset('assets/img/air mineral.jpg') }}" alt="airmineral"
-                                                style="height: 100px; width: 100px;">
-                                            <h4>Mineral Water</h4>
-                                            <h5>RM1.30</h5>
-                                        </div>
-                                    </td>
-                                    <td style="border-style: solid;">
-                                        <div class="container" onclick="selectItem('air kotak', 1.50, this)">
-                                            <img src="{{ asset('assets/img/airkotak.jpg') }}" alt="airkotak"
-                                                style="height: 100px; width: 100px;">
-                                            <h4>Air Kotak</h4>
-                                            <h5>RM1.50</h5>
-                                        </div>
-                                    </td>
-                                    <td style="border-style: solid;">
-                                        <div class="container" onclick="selectItem('Milo', 3.50, this)">
-                                            <img src="{{ asset('assets/img/buah.jpg') }}" alt="Milo"
-                                                style="height: 100px; width: 100px;">
-                                            <h4>Milo Tin</h4>
-                                            <h5>RM3.50</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+
                         </div>
                     </div>
 
-                    <div id="Amenities" class="tabcontent" style="height: 100%; float: left; width: 68%">
+                    <div id="Amenities" class="tabcontent">
                         <h3>Amenities</h3>
                         <div class="container">
-                            <table>
-                                <tr>
-                                    <td style="border-style: solid;">
-                                        <div class="container" onclick="selectItem('Pad', 5.50, this)">
-                                            <img src="{{ asset('assets/img/pad.jpg') }}" alt="Pad"
-                                                style="height: 100px; width: 100px;">
-                                            <h4>Pad Wanita</h4>
-                                            <h5>RM5.50</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+
                         </div>
                     </div>
 
-                    <div id="Printing" class="tabcontent" style="height: 100%; float: left; width: 68%">
+                    <div id="Printing" class="tabcontent">
                         <h3>Printing</h3>
                         <div class="container">
-                            <table>
-                                <tr>
-                                    <td style="border-style: solid;">
-                                        <div class="container" onclick="selectItem('Nocolor', 0.10, this)">
-                                            <img src="{{ asset('assets/img/nocolor.jpg') }}" alt="no"
-                                                style="height: 100px; width: 100px;">
-                                            <h4>Print No Color</h4>
-                                            <h5>RM0.10</h5>
-                                        </div>
-                                    </td>
-                                    <td style="border-style: solid;">
-                                        <div class="container" onclick="selectItem('color', 0.50, this)">
-                                            <img src="{{ asset('assets/img/apollo.jpg') }}" alt="color"
-                                                style="height: 100px; width: 100px;">
-                                            <h4>Print Color</h4>
-                                            <h5>RM0.50</h5>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+
                         </div>
                     </div>
 
@@ -482,68 +331,4 @@
         </div>
 
     </div>
-    <script>
-        // Create a variable to store the total sum
-        var totalSum = 0;
-
-        // Function that handles item selection
-        function selectItem(itemName, price, element) {
-            // Check if the item is already selected
-            var isSelected = element.classList.contains('selected');
-
-            // Reset the selection for all items
-            var items = document.getElementsByClassName('container');
-            for (var i = 0; i < items.length; i++) {
-                items[i].classList.remove('selected');
-            }
-
-            if (!isSelected) {
-                // Add the selected class to the clicked item
-                element.classList.add('selected');
-
-                // Add the item's price to the total sum
-                totalSum += price;
-            } else {
-                // Deselect the item
-                totalSum -= price;
-            }
-
-            // Update the calculator display with the total sum
-            document.getElementById('result').value = totalSum.toFixed(2);
-        }
-
-        // Function that evaluates the total sum and displays it
-        function calculateTotal() {
-            document.getElementById('result').value = totalSum.toFixed(2);
-        }
-
-        // Function that clears the display and resets the total sum
-        function clr() {
-            document.getElementById('result').value = "";
-            totalSum = 0;
-        }
-
-        //Overlay Functions
-        // Function to show the popup overlay
-        function showOverlay() {
-            document.getElementById('overlay').style.display = 'block';
-        }
-
-        // Function to hide the popup overlay
-        function hideOverlay() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        // Function to handle the payment confirmation
-        function confirmPayment(isConfirmed) {
-            if (isConfirmed) {
-                // User confirmed payment, perform necessary actions
-                alert('Payment confirmed!');
-                // You can add additional logic here for processing the payment
-            }
-
-            hideOverlay();
-        }
-
-    </script>
 @endsection
