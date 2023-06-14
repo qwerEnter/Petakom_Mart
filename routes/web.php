@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
+Route::get('/sales', function () {
+    return view('admin.sales');
+});
+
 Route::resource('manageinventory/inventories', InventoryController::class);
 
 Route::resource('admin/delivery', DeliveryController::class);
