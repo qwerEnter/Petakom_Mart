@@ -78,6 +78,14 @@
                 border: 1px solid #ccc;
                 border-top: none;
             }
+
+            table{
+                width: 80%;
+            }
+
+            tr,th{
+                text-align: left;
+            }
         </style>
     </head>
 
@@ -96,7 +104,7 @@
                 <div class="col-md-12">
 
 
-                    <div style="float: right;">
+                    <div style="float: right">
                         <div class="table-responsive">
                             <table id="calcu">
                                 <tr>
@@ -161,15 +169,15 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2"><input type="button" value="Enter" onclick="dis('Enter')"
-                                        onkeydown="myFunction(event)">
+                                            onkeydown="myFunction(event)">
                                     </td>
                                     <td colspan="2"><input type="button" value="Back" onclick="dis('Back')"
-                                        onkeydown="myFunction(event)">
+                                            onkeydown="myFunction(event)">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><input type="button" value="Confirm Payment" onclick="dis('Confirm Payment')"
-                                        onkeydown="myFunction(event)">
+                                    <td colspan="4"><input type="button" value="Confirm Payment"
+                                            onclick="dis('Confirm Payment')" onkeydown="myFunction(event)">
                                     </td>
                                 </tr>
                             </table>
@@ -238,18 +246,58 @@
                         <button class="tablinks" onclick="openCity(event, 'Printing')">Printing</button>
                     </div>
 
-                    <div id="General" class="tabcontent">
+                    <div id="General" class="tabcontent" style="height: 100%; float: left; width: 68%">
                         <h3>General</h3>
-                        <div class="container">
+                        <table>
+                            <tr>
+                                <td style="border-style: solid; margin-right: 50px;">
+                                    <div class="container">
+                                        <img src="{{ asset('assets/img/fkpen.png') }}" alt="fkpen"
+                                            style="height: 100px; width: 100px;">
+                                        <h4>FK Pen</h4>
+                                        <h5>RM1.20</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="container">
+                                        <img src="{{ asset('assets/img/fklanyard.png') }}" alt="fklanyard"
+                                            style="height: 100px; width: 100px;">
+                                        <h4>FK Pencil</h4>
+                                        <h5>RM1.00</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="container">
+                                        <img src="{{ asset('assets/img/fkglue.png') }}" alt="fkglue"
+                                            style="height: 100px; width: 100px;">
+                                        <h4>FK Glue</h4>
+                                        <h5>RM1.50</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="container">
+                                        <img src="{{ asset('assets/img/fklanyard.png') }}" alt="fklanyard"
+                                            style="height: 100px; width: 100px;">
+                                        <h4>FK Lanyard</h4>
+                                        <h5>RM5.00</h5>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="container">
+                                        <img src="{{ asset('assets/img/fkcardholder.jpg') }}" alt="fkcardholder"
+                                            style="height: 100px; width: 100px;">
+                                        <h4>FK Card Holder</h4>
+                                        <h5>RM3.00</h5>
+                                    </div>
+                                </td>
 
-                        </div>
+                            </tr>
+                        </table>
                     </div>
 
                     <div id="Food" class="tabcontent">
                         <h3>Food</h3>
-                        <div class="container">
-                            <img src="{{asset('assets/img/fkpen.png')}}" alt="fkpen">
-                        </div>
+
                     </div>
 
                     <div id="Beverages" class="tabcontent">
