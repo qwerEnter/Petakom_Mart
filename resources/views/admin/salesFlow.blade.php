@@ -8,25 +8,27 @@
 
     <head>
         <style>
-            /*Style for Interactivity*/
             table {
                 margin: 0 auto;
                 border-collapse: collapse;
-                text-align: center;
-            }
-
-            th,
-            td {
-                padding: 10px;
-                border: 1px solid black;
+                font-family: Arial, sans-serif;
+                width: 100%;
             }
 
             th {
-                background-color: lightgray;
+                background-color: #333;
+                color: #fff;
+                font-weight: bold;
+                padding: 10px;
+                text-align: center;
+                text-transform: uppercase;
             }
 
-            td:first-child {
-                text-align: left;
+            td {
+                background-color: #f7f7f7;
+                color: #333;
+                padding: 10px;
+                text-align: center;
             }
 
             .counter {
@@ -36,9 +38,25 @@
             }
 
             .counter span {
-                margin: 0 10px;
-                font-size: 20px;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background-color: #eee;
+                color: #333;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 30px;
                 cursor: pointer;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
+
+            .counter span:hover {
+                background-color: #ddd;
+            }
+
+            .total {
+                font-weight: bold;
             }
 
             .subtotal-container {
@@ -46,10 +64,27 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .subtotal {
+                font-weight: bold;
+                margin-bottom: 5px;
             }
 
             .save-button {
-                margin-top: 10px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .save-button:hover {
+                background-color: #555;
             }
         </style>
     </head>
@@ -215,7 +250,7 @@
                 var total = value * amount;
                 grandTotal += total;
 
-                totalCell.innerText ='RM' + total.toFixed(2);
+                totalCell.innerText = 'RM' + total.toFixed(2);
             }
 
             var subtotalElement = document.getElementById('subtotal');

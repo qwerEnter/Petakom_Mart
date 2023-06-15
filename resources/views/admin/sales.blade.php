@@ -14,7 +14,7 @@
             integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-            <!-- for styling -->
+        <!-- for styling -->
         <style>
             table {
                 border: 1px solid black;
@@ -548,6 +548,42 @@
             }
 
             hideOverlay();
+        }
+
+        //Function for Overlays of Confirm payment
+        function confirmPayment(confirmation) {
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+
+            if (confirmation) {
+                var paymentSelectionOverlay = document.getElementById('payment-selection-overlay');
+                paymentSelectionOverlay.style.display = 'flex';
+            }
+        }
+
+        function selectPaymentMethod() {
+            var paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+            if (paymentMethod === 'qr-code') {
+                var paymentSelectionOverlay = document.getElementById('payment-selection-overlay');
+                paymentSelectionOverlay.style.display = 'none';
+
+                var qrOverlay = document.getElementById('qr-overlay');
+                qrOverlay.style.display = 'flex';
+            }
+        }
+
+        function cancelPayment() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+
+            var paymentSelectionOverlay = document.getElementById('payment-selection-overlay');
+            paymentSelectionOverlay.style.display = 'none';
+        }
+
+        function closeQROverlay() {
+            var qrOverlay = document.getElementById('qr-overlay');
+            qrOverlay.style.display = 'none';
         }
     </script>
 @endsection
