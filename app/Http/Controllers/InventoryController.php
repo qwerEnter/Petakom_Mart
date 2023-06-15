@@ -16,6 +16,7 @@ class InventoryController extends Controller
     public function index()
     {
         $inventories = Inventory::all();
+        
 
         return view('admin.inventory', ['inventories' => $inventories]);
         
@@ -27,7 +28,6 @@ class InventoryController extends Controller
     public function create()
     {
        
-
         return view('manageinventory.addinventory'); 
         // return view('manageinventory.addinventory');
     }
@@ -45,23 +45,24 @@ class InventoryController extends Controller
      */
     public function show(Inventory $inventory)
     {
-        //
+        return view('manageinventory.viewinventory');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Inventory $inventory)
+    public function edit()
     {
-        return view('manageinventory.updateinventory');
+        return view('manageinventory.editinventory');
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateInventoryRequest $request, Inventory $inventory)
+    
     {
-        //
+        return view('manageinventory.updateinventory');
     }
 
     /**

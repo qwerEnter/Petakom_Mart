@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::resource('manageinventory/inventories', InventoryController::class);
 
+
+
 Route::resource('admin/delivery', DeliveryController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])

@@ -46,14 +46,6 @@ Edit | Admin
                         </tr>
                         <tr>
                           <td>
-                            <label for="colFormLabelLg" class="col-form-label lg">Stock Levels:</label> 
-                              <td class="col-md-9">
-                                <input type="email" class="form-control" id="colFormLabelLg">
-                              </td> 
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
                             <label for="colFormLabelLg" class="col-form-label lg">Product Description:</label> 
                               <td class="col-md-9">
                                 <input type="email" class="form-control" id="colFormLabelLg">
@@ -69,7 +61,9 @@ Edit | Admin
                       </tbody>
                   </table>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-primary me-md-2" type="button">Save</button>
+                        <button class="btn btn-primary me-md-2" type="button">Update</button>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-primary me-md-2" type="button">Delete</button>
                       </div>
                 </div>
               </div>
@@ -79,3 +73,10 @@ Edit | Admin
        
 @endsection
 
+@section('styles')
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css.map') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/now-ui-dashboards.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/now-ui-dashboard.css.map') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/now-ui-dashboard.min.css') }}">
+@endsection

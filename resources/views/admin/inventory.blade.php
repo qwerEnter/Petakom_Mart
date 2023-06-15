@@ -33,6 +33,7 @@ Inventory | Admin
                         </thead>
                         <tbody>
                             @foreach ($inventories as $inventory)
+                                   
                             <tr>
                                 <td>{{ $inventory->id }}</td>
                                 <td>{{ $inventory->product->name }}</td> 
@@ -41,10 +42,9 @@ Inventory | Admin
                                 <td>{{ $inventory->quantity }}</td>
                                 <td>
                                     <div class='btn-group'>
-                                        <a type='button' class='btn btn-success' href="{{ url('/admin/inventory/edit') }}">Edit</a>
-                                        <a type='button' class='btn btn-info' href="{{ url('/admin/inventory/view') }}">View</a>
-                                        <a type='button' class='btn btn-warning' href="{{ url('/admin/inventory/update') }}">Update</a>
-                                        <a type='button' class='btn btn-danger' href="{{ url('/admin/inventory/delete') }}">Delete</a>
+                                        <a type='button' class='btn btn-success' href="{{ route('inventories.edit', ['inventory' => $inventory->id]) }}">Edit</a>
+                                        <a type='button' class='btn btn-warning' href="{{ route('inventories.show', ['inventory' => $inventory->id]) }}">View</a>
+                                        
                                     </div>
                                 </td>
                             </tr>

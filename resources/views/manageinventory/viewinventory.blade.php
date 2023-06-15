@@ -79,4 +79,10 @@ View | Admin
        
 @endsection
 
-
+@section('styles')
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css.map') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/now-ui-dashboards.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/now-ui-dashboard.css.map') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/now-ui-dashboard.min.css') }}">
+@endsection
