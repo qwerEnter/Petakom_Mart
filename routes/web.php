@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CashierController;
 use App\Http\Controllers\InventoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,9 +25,14 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/sales', function () {
-    return view('admin.sales');
+Route::get('/salesFlow', function () {
+    return view('admin.salesFlow');
 });
+
+Route::get('/reportSales', function () {
+    return view('admin.reportSales');
+});
+
 
 Route::resource('manageinventory/inventories', InventoryController::class);
 
