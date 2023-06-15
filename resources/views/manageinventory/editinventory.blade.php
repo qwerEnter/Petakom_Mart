@@ -31,32 +31,32 @@ Edit | Admin
                         </td>
                       </tr>
                         <td>
-                          <label for="colFormLabelLg" class="col-form-label lg">ID Products:</label> 
+                          <label for="colFormLabelLg" class="col-form-label lg">ID Products:</label>
                             <td class="col-md-9">
                               <input type="email" class="form-control" id="colFormLabelLg">
-                            </td> 
+                            </td>
                         </td>
                         <tr>
                           <td>
-                            <label for="colFormLabelLg" class="col-form-label lg">Price:</label> 
+                            <label for="colFormLabelLg" class="col-form-label lg">Price:</label>
                               <td class="col-md-9">
                                 <input type="email" class="form-control" id="colFormLabelLg">
-                              </td> 
+                              </td>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            <label for="colFormLabelLg" class="col-form-label lg">Product Description:</label> 
+                            <label for="colFormLabelLg" class="col-form-label lg">Product Description:</label>
                               <td class="col-md-9">
                                 <input type="email" class="form-control" id="colFormLabelLg">
-                              </td> 
+                              </td>
                           </td>
                         </tr>
                           <td>
-                            <label for="colFormLabel" class="col-form-label">Date Expired:</label> 
+                            <label for="colFormLabel" class="col-form-label">Date Expired:</label>
                               <td class="col-md-9">
                                 <input type="email" class="form-control" id="colFormLabel">
-                              </td> 
+                              </td>
                           </td>
                       </tbody>
                   </table>
@@ -70,7 +70,7 @@ Edit | Admin
             </div>
           </div>
 </div>
-       
+
 @endsection
 
 @section('styles')
