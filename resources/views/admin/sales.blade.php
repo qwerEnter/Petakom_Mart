@@ -13,7 +13,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
             integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <!-- for styling -->
+
+            <!-- for styling -->
         <style>
             table {
                 border: 1px solid black;
@@ -132,7 +133,6 @@
             .popup p {
                 margin-bottom: 10px;
             }
-
         </style>
     </head>
 
@@ -203,7 +203,14 @@
                                             onkeydown="myFunction(event)">
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <td colspan="2"><input type="button" value="+" onclick="dis('+')"
+                                            onkeydown="myFunction(event)">
+                                    </td>
+                                    <td colspan="2"><input type="button" value="*" onclick="dis('*')"
+                                            onkeydown="myFunction(event)">
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td colspan="2"><input type="button" value="Enter" onclick="dis('Enter')"
                                             onkeydown="myFunction(event)">
@@ -218,60 +225,6 @@
 
                                 </tr>
                             </table>
-                            <script>
-                                // Function that display value
-                                function dis(val) {
-                                    document.getElementById("result").value += val
-                                }
-
-                                function myFunction(event) {
-                                    if (event.key == '0' || event.key == '1' ||
-                                        event.key == '2' || event.key == '3' ||
-                                        event.key == '4' || event.key == '5' ||
-                                        event.key == '6' || event.key == '7' ||
-                                        event.key == '8' || event.key == '9' ||
-                                        event.key == '+' || event.key == '-' ||
-                                        event.key == '*' || event.key == '/')
-                                        document.getElementById("result").value += event.key;
-                                }
-
-                                var cal = document.getElementById("calcu");
-                                cal.onkeyup = function(event) {
-                                    if (event.keyCode === 13) {
-                                        console.log("Enter");
-                                        let x = document.getElementById("result").value
-                                        console.log(x);
-                                        solve();
-                                    }
-                                }
-
-                                // Function that evaluates the digit and return result
-                                function solve() {
-                                    let x = document.getElementById("result").value
-                                    let y = math.evaluate(x)
-                                    document.getElementById("result").value = y
-                                }
-
-                                // Function that clear the display
-                                function clr() {
-                                    document.getElementById("result").value = ""
-                                }
-
-                                // Function Tab
-                                function openCity(evt, cityName) {
-                                    var i, tabcontent, tablinks;
-                                    tabcontent = document.getElementsByClassName("tabcontent");
-                                    for (i = 0; i < tabcontent.length; i++) {
-                                        tabcontent[i].style.display = "none";
-                                    }
-                                    tablinks = document.getElementsByClassName("tablinks");
-                                    for (i = 0; i < tablinks.length; i++) {
-                                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                                    }
-                                    document.getElementById(cityName).style.display = "block";
-                                    evt.currentTarget.className += " active";
-                                }
-                            </script>
                         </div>
                     </div>
 
@@ -289,8 +242,7 @@
                             <h2>Confirm Payment</h2>
                             <p>Are you sure to continue with the payment?</p>
                             <div class="button-container">
-                                <button onclick="confirmPayment(true)"
-                                    onkeydown="myFunction(event)>Yes</button>
+                                <button onclick="confirmPayment(true)">Yes</button>
                                 <button onclick="confirmPayment(false)">No</button>
                             </div>
                         </div>
@@ -483,6 +435,59 @@
 
     </div>
     <script>
+        //Calculator Scripts
+        // Function that display value
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+
+        function myFunction(event) {
+            if (event.key == '0' || event.key == '1' ||
+                event.key == '2' || event.key == '3' ||
+                event.key == '4' || event.key == '5' ||
+                event.key == '6' || event.key == '7' ||
+                event.key == '8' || event.key == '9' ||
+                event.key == '+' || event.key == '-' ||
+                event.key == '*' || event.key == '/')
+                document.getElementById("result").value += event.key;
+        }
+
+        var cal = document.getElementById("calcu");
+        cal.onkeyup = function(event) {
+            if (event.keyCode === 13) {
+                console.log("Enter");
+                let x = document.getElementById("result").value
+                console.log(x);
+                solve();
+            }
+        }
+
+        // Function that evaluates the digit and return result
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = math.evaluate(x)
+            document.getElementById("result").value = y
+        }
+
+        // Function that clear the display
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+
+        // Function Tab
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
         // Create a variable to store the total sum
         var totalSum = 0;
 
@@ -544,6 +549,5 @@
 
             hideOverlay();
         }
-
     </script>
 @endsection
