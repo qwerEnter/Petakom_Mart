@@ -3,6 +3,8 @@
 use App\Http\Controllers\CashierController;
 use App\Http\Controllers\InventoryController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use Inertia\Inertia;
 
 use App\Http\Controllers\DeliveryController;
 
@@ -56,18 +58,3 @@ Route::resource('admin/sales', CashierController::class);
 // Route::post('/save-newmeetup', [DeliveryControllers::class, 'save2']);
 
 
-
-
-
-
-
-Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/dashboard', function () {
-        return view('dashboard');
-    })
-    ->name('dashboard');
-
-
-Route::prefix('/')
-    ->middleware(['auth:sanctum', 'verified'])
-    ->group(function () { });
