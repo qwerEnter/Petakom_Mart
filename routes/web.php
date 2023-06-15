@@ -38,6 +38,8 @@ Route::get('/reportSales', function () {
 
 Route::resource('manageinventory/inventories', InventoryController::class);
 
+
+
 Route::resource('admin/delivery', DeliveryController::class);
 
 Route::resource('admin/sales', CashierController::class);
