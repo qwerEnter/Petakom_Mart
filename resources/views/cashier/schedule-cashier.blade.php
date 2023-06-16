@@ -51,7 +51,7 @@ Schedule | Admin
         .popup {
             background-color: #fff;
             padding: 20px;
-            border-radius: 4px;
+            border-radius: 10px;
         }
 
         .popup-buttons {
@@ -170,39 +170,13 @@ Schedule | Admin
             <h2 id="popupTitle"></h2>
                 <div class="popup-buttons">
                     <button onclick="showPopup1('add')">Add</button>
-                    <button onclick="showPopup2('edit')">Edit</button>
-                    <button onclick="performAction('delete')">Delete</button>
                 </div>
             </div>
         </div>
         
         <div class="popup-overlay" id="popupOverlay1">
             <div class="popup">
-                <h2>Add User</h2>
-                <form class="popup-form" onsubmit="submitForm(event)">
-                    <input type="text" id="nameInput" placeholder="Name" required><br>
-                    <input type="text" id="studentIdInput" placeholder="Student ID" required><br>
-                    <div>
-                        <label>
-                            <input type="radio" name="workType" value="full-time" required> Full-time
-                        </label>
-                        <label>
-                            <input type="radio" name="workType" value="part-time" required> Part-time
-                        </label>
-                    </div>
-                    <input type="date" id="dateInput" required><br>
-                    <input type="time" id="timeInput" required><br>
-                    <div class="popup-buttons">
-                        <button type="submit">Submit</button>
-                        <button type="button" onclick="closePopup()">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="popup-overlay" id="popupOverlay2">
-            <div class="popup">
-                <h2>Edit Schedule</h2>
+                <h2>Add Schedule</h2>
                 <form class="popup-form" onsubmit="submitForm(event)">
                     <input type="text" id="nameInput" placeholder="Name" required><br>
                     <input type="text" id="studentIdInput" placeholder="Student ID" required><br>
@@ -234,21 +208,15 @@ Schedule | Admin
         function performAction(action) {
             // Replace with your logic for handling the action
             alert(action + ' action performed!');
-            closePopup();
         }
 
         function showPopup1() {
-            document.getElementById('popupOverlay1').style.display = 'flex';
-        }
-
-        function showPopup2() {
-            document.getElementById('popupOverlay2').style.display = 'flex';
+            document.getElementById('popupOverlay1').style.display = 'compact';
         }
 
         function closePopup() {
             document.getElementById('popupOverlay').style.display = 'none';
-            document.getElementById('popupOverlay1').style.display = 'none'; 
-            document.getElementById('popupOverlay2').style.display = 'none'; 
+            document.getElementById('popupOverlay1').style.display = 'none';
         }
 
         function submitForm(event) {
