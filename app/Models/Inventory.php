@@ -14,7 +14,9 @@ class Inventory extends Model
     use Searchable;
     use SoftDeletes;
 
-    protected $fillable = ['product_id', 'expired_date', 'quantity'];
+    protected $table = 'inventories';
+
+    protected $fillable = ['product_id', 'expired_date', 'quantity', 'name', 'price','description'];
 
     protected $searchableFields = ['*'];
 
