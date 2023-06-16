@@ -28,6 +28,10 @@ Route::get('cashier/schedule', function () {
     return view('cashier.schedule-cashier');
 });
 
+
+// Route::resource('admin/schedule', ScheduleController::class);
+Route::get('/schedule/{class}', 'ScheduleController@index');
+
 Route::resource('manageinventory/inventories', InventoryController::class);
 Route::post('/inventory/create', [InventoryController::class, 'create']);
 Route::get('/inventory/{id}/edit', [InventoryController::class, 'edit']);

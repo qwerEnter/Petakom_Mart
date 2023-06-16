@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('employees', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('user_id');
+            $table->string('name')->nullable();
             $table->string('matric_no');
             $table->enum('employment_type', ['part_time', 'full_time']);
 
