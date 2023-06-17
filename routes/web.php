@@ -37,7 +37,14 @@ Route::get('/reportSales', function () {
 
 
 Route::resource('manageinventory/inventories', InventoryController::class);
+Route::post('/inventory/create', [InventoryController::class, 'create']);
+Route::get('/inventory/{id}/edit', [InventoryController::class, 'edit']);
+Route::post('/inventory/{id}/update', [InventoryController::class, 'update']);
+Route::get('/inventory/{id}/delete', [InventoryController::class, 'delete']);
 
+Route::get('/inventory', function () {
+    return view('manageinventory.addinventory');
+});
 
 
 Route::resource('admin/delivery', DeliveryController::class);
@@ -60,3 +67,6 @@ Route::resource('admin/sales', CashierController::class);
 // Route::post('/save-newmeetup', [DeliveryControllers::class, 'save2']);
 
 
+Route::prefix('/')
+    ->middleware(['auth:sanctum', 'verified'])
+    ->group(function () { });
