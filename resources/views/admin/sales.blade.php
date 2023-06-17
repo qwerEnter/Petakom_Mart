@@ -13,6 +13,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
             integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+        </script>
+
+        {{-- Css Bootstrap --}}
+        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> --}}
 
         <!-- for styling -->
         <style>
@@ -93,45 +103,10 @@
                 background-color: blue;
             }
 
-            /*Overlay Style for Confirm*/
-            .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                /* semi-transparent background */
-                z-index: 9999;
-                display: none;
-                /* hide the overlay by default */
-            }
-
-            .popup {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 5px;
-                text-align: center;
-            }
-
-            .button-container {
-                margin-top: 20px;
-            }
-
-            .popup button {
-                margin: 0 10px;
-            }
-
-            .popup h2 {
-                margin-top: 0;
-            }
-
-            .popup p {
-                margin-bottom: 10px;
+            /*Highlight*/
+            .highlight {
+                background-color: blue;
+                color: white;
             }
         </style>
     </head>
@@ -220,13 +195,106 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><input type="button" value="Confirm Payment"
-                                            onclick="showOverlay()"></td>
+                                    <td colspan="4"><input type="button" value="Confirm Payment" data-toggle="modal"
+                                            data-target="#exampleModal"></td>
 
                                 </tr>
                             </table>
                         </div>
                     </div>
+
+                    <!-- Modal Confirm Payment-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h2>Confirm Payment</h2>
+                                    <p>Are you sure to continue with the payment?</p>
+                                </div>
+                                <div class="modal-footer" style="padding-right: 37%">
+                                    <button class="btn btn-success" data-dismiss="modal" data-target="#paymentMethod"
+                                        data-toggle="modal">Yes</button>
+                                    <button class="btn btn-primary me-md-2" data-dismiss="modal">No</button>
+                                    {{-- <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Payment Method-->
+                    <div class="modal fade" id="paymentMethod" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h2>Payment Selection</h2>
+                                    <p>Choose the payment method:</p>
+                                    <table>
+                                        <tr style="border-style: solid">
+                                            <td>
+                                                <div id="qrDiv" class="container"
+                                                    onclick="highlightPaymentMethod('qr')">
+                                                    <img src="{{ asset('assets/img/qr.png') }}" alt="qr"
+                                                        style="height: 100px; width: 100px" class="center">
+                                                    <h5>QR Code</h5>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div id="cashDiv" class="container"
+                                                    onclick="highlightPaymentMethod('cash')">
+                                                    <img src="{{ asset('assets/img/cash.png') }}" alt="cash"
+                                                        style="height: 100px; width: 100px" class="center">
+                                                    <h5>Cash</h5>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="modal-footer" style="padding-right: 37%">
+                                    <button class="btn btn-success" data-dismiss="modal" data-target="#qrMethod"
+                                        data-toggle="modal">Yes</button>
+                                    <button class="btn btn-primary me-md-2" data-dismiss="modal">No</button>
+                                    {{-- <button type="button" class="btn btn-secondary"
+                                         data-bs-dismiss="modal">Close</button>
+                                     <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal QR Method-->
+                    <div class="modal fade" id="qrMethod" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h2>Payment Selection</h2>
+                                    <p>Please scan the QR below:</p>
+                                    <div class="center" style="text-align: center;">
+                                        <div style="display: inline-block;">
+                                            <img src="{{ asset('assets/img/qr.png') }}" alt="qr"
+                                                style="height: 100px; width: 100px" class="center">
+                                            <div>
+                                                <h4>PETAKOM FK UMP</h4>
+                                                <h5>00000216546516</h5>
+                                                <h5>Maybank Berhad</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer" style="text-align: center;">
+                                    <button class="btn btn-success" data-dismiss="modal">OK</button>
+                                    {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="tab" style="width: 68%">
                         <button class="tablinks" onclick="openCity(event, 'General')">General</button>
@@ -234,18 +302,6 @@
                         <button class="tablinks" onclick="openCity(event, 'Beverages')">Beverages</button>
                         <button class="tablinks" onclick="openCity(event, 'Amenities')">Amenities</button>
                         <button class="tablinks" onclick="openCity(event, 'Printing')">Printing</button>
-                    </div>
-
-                    <!-- Add a div for the popup overlay -->
-                    <div id="overlay" class="overlay">
-                        <div class="popup">
-                            <h2>Confirm Payment</h2>
-                            <p>Are you sure to continue with the payment?</p>
-                            <div class="button-container">
-                                <button onclick="confirmPayment(true)">Yes</button>
-                                <button onclick="confirmPayment(false)">No</button>
-                            </div>
-                        </div>
                     </div>
 
                     <div id="General" class="tabcontent" style="height: 100%; float: left; width: 68%">
@@ -528,62 +584,18 @@
             totalSum = 0;
         }
 
-        //Overlay Functions
-        // Function to show the popup overlay
-        function showOverlay() {
-            document.getElementById('overlay').style.display = 'block';
-        }
+        //Highlight options
+        function highlightPaymentMethod(method) {
+            var qrDiv = document.getElementById("qrDiv");
+            var cashDiv = document.getElementById("cashDiv");
 
-        // Function to hide the popup overlay
-        function hideOverlay() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        // Function to handle the payment confirmation
-        function confirmPayment(isConfirmed) {
-            if (isConfirmed) {
-                // User confirmed payment, perform necessary actions
-                alert('Payment confirmed!');
-                // You can add additional logic here for processing the payment
+            if (method === "qr") {
+                qrDiv.classList.add("highlight");
+                cashDiv.classList.remove("highlight");
+            } else if (method === "cash") {
+                cashDiv.classList.add("highlight");
+                qrDiv.classList.remove("highlight");
             }
-
-            hideOverlay();
-        }
-
-        //Function for Overlays of Confirm payment
-        function confirmPayment(confirmation) {
-            var overlay = document.getElementById('overlay');
-            overlay.style.display = 'none';
-
-            if (confirmation) {
-                var paymentSelectionOverlay = document.getElementById('payment-selection-overlay');
-                paymentSelectionOverlay.style.display = 'flex';
-            }
-        }
-
-        function selectPaymentMethod() {
-            var paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-
-            if (paymentMethod === 'qr-code') {
-                var paymentSelectionOverlay = document.getElementById('payment-selection-overlay');
-                paymentSelectionOverlay.style.display = 'none';
-
-                var qrOverlay = document.getElementById('qr-overlay');
-                qrOverlay.style.display = 'flex';
-            }
-        }
-
-        function cancelPayment() {
-            var overlay = document.getElementById('overlay');
-            overlay.style.display = 'none';
-
-            var paymentSelectionOverlay = document.getElementById('payment-selection-overlay');
-            paymentSelectionOverlay.style.display = 'none';
-        }
-
-        function closeQROverlay() {
-            var qrOverlay = document.getElementById('qr-overlay');
-            qrOverlay.style.display = 'none';
         }
     </script>
 @endsection
