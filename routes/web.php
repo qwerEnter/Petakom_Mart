@@ -31,9 +31,7 @@ Route::get('/salesFlow', function () {
     return view('admin.salesFlow');
 });
 
-Route::get('/reportSales', function () {
-    return view('admin.reportSales');
-});
+Route::get('/reportSales', [SalesController::class, 'reportSale']);
 
 
 Route::resource('manageinventory/inventories', InventoryController::class);
