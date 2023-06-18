@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CashierController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\SalesController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use Inertia\Inertia;
@@ -28,7 +29,7 @@ Route::get('/', function () {
 });
 
 Route::get('/salesFlow', function () {
-    return view('admin.salesFlow');
+    return view('manageSales.salesFlow');
 });
 
 Route::get('/reportSales', [SalesController::class, 'reportSale']);

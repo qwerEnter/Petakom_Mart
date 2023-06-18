@@ -15,7 +15,7 @@ class CashierController extends Controller
     {
         $Cashiers = Sale::all();
 
-        return view('admin.sales', ['cashier' => $Cashiers]);
+        return view('manageSales.sales', ['cashier' => $Cashiers]);
     }
 
 

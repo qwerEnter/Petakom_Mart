@@ -204,13 +204,50 @@
                             <td></td>
                             <td class="subtotal-container">
                                 <span id="subtotal"></span>
-                                <button class="save-button" onclick="saveData()">Save</button>
+                                <button class="save-button" data-toggle="modal" data-target="#saveModal">Save</button>
                             </td>
                             <td></td>
                         </tr>
                     </tbody>
                 </table>
 
+                <!-- Modal Confirm Save-->
+                <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <h2>Save Confirmation</h2>
+                            <p>Which save?</p>
+                            <table>
+                                <tr style="border-style: solid">
+                                    <td>
+                                        <div id="openDiv" class="container" data-dismiss="modal" data-target="#openMethod"
+                                            data-toggle="modal">
+                                            <img src="{{ asset('assets/img/save.png') }}" alt="open"
+                                                style="height: 100px; width: 100px" class="center">
+                                            <h5>Opening</h5>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="closeDiv" class="container" data-dismiss="modal"
+                                            data-target="#closeMethod" data-toggle="modal">
+                                            <img src="{{ asset('assets/img/closed.jpg') }}" alt="close"
+                                                style="height: 100px; width: 100px" class="center">
+                                            <h5>Closing</h5>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="modal-footer" style="padding-right: 37%">
+                                {{-- <button class="btn btn-success" data-dismiss="modal" data-target="#qrModal"
+                                    data-toggle="modal">Yes</button> --}}
+                                <button class="btn btn-primary me-md-2" data-dismiss="modal">Cancel</button>
+                                {{-- <button type="button" class="btn btn-secondary"
+                                     data-bs-dismiss="modal">Close</button>
+                                 <button type="button" class="btn btn-primary">Save changes</button> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {{-- <div class="card-body" style="float= right;">
 
                 </div> --}}
@@ -256,13 +293,6 @@
             var subtotalElement = document.getElementById('subtotal');
             var subtotal = grandTotal.toFixed(2);
             subtotalElement.innerText = 'Subtotal = RM' + subtotal;
-        }
-
-        function saveData() {
-            var subtotalElement = document.getElementById('subtotal');
-            var subtotal = subtotalElement.innerText;
-            // Implement save functionality here
-            console.log('Data saved:', subtotal);
         }
     </script>
 @endsection

@@ -138,61 +138,44 @@
                                     <!-- create button and assign value to each button -->
                                     <!-- dis("1") will call function dis to display value -->
                                     <td><input type="button" value="1" onclick="dis('1')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
                                     <td><input type="button" value="2" onclick="dis('2')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
                                     <td><input type="button" value="3" onclick="dis('3')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
+                                    <td><input type="button" value="/" onclick="dis('/')"
+                                                onkeydown="myFunction(event)"> </td>
+                                </tr>
+                                <tr>
                                     <td><input type="button" value="4" onclick="dis('4')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
-                                </tr>
-                                <tr>
+                                                onkeydown="myFunction(event)"> </td>
                                     <td><input type="button" value="5" onclick="dis('5')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
                                     <td><input type="button" value="6" onclick="dis('6')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
+                                    <td><input type="button" value="*" onclick="dis('*')"
+                                                onkeydown="myFunction(event)"> </td>
+                                </tr>
+                                <tr>
                                     <td><input type="button" value="7" onclick="dis('7')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
                                     <td><input type="button" value="8" onclick="dis('8')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
-                                </tr>
-                                <tr>
+                                                onkeydown="myFunction(event)"> </td>
                                     <td><input type="button" value="9" onclick="dis('9')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
+                                    <td><input type="button" value="-" onclick="dis('-')"
+                                                onkeydown="myFunction(event)"> </td>
+                                </tr>
+                                <tr>
                                     <td><input type="button" value="0" onclick="dis('0')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
-                                    <td><input type="button" value="00" onclick="dis('00')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
                                     <td><input type="button" value="." onclick="dis('.')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><input type="button" value="+" onclick="dis('+')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
-                                    <td colspan="2"><input type="button" value="*" onclick="dis('*')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><input type="button" value="Enter" onclick="dis('Enter')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
-                                    <td colspan="2"><input type="button" value="Back" onclick="dis('Back')"
-                                            onkeydown="myFunction(event)">
-                                    </td>
+                                                onkeydown="myFunction(event)"> </td>
+                                    <!-- solve function call function solve to evaluate value -->
+                                    <td><input type="button" value="=" onclick="solve()"> </td>
+
+                                    <td><input type="button" value="+" onclick="dis('+')"
+                                                onkeydown="myFunction(event)"> </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4"><input type="button" value="Confirm Payment" data-toggle="modal"
@@ -236,8 +219,8 @@
                                     <table>
                                         <tr style="border-style: solid">
                                             <td>
-                                                <div id="qrDiv" class="container"
-                                                    onclick="highlightPaymentMethod('qr')">
+                                                <div id="qrDiv" class="container" data-dismiss="modal"
+                                                    data-target="#qrMethod" data-toggle="modal">
                                                     <img src="{{ asset('assets/img/qr.png') }}" alt="qr"
                                                         style="height: 100px; width: 100px" class="center">
                                                     <h5>QR Code</h5>
@@ -245,7 +228,8 @@
                                             </td>
                                             <td>
                                                 <div id="cashDiv" class="container"
-                                                    onclick="highlightPaymentMethod('cash')">
+                                                data-dismiss="modal" data-target="#cashMethod"
+                                                data-toggle="modal">
                                                     <img src="{{ asset('assets/img/cash.png') }}" alt="cash"
                                                         style="height: 100px; width: 100px" class="center">
                                                     <h5>Cash</h5>
@@ -255,9 +239,9 @@
                                     </table>
                                 </div>
                                 <div class="modal-footer" style="padding-right: 37%">
-                                    <button class="btn btn-success" data-dismiss="modal" data-target="#qrMethod"
-                                        data-toggle="modal">Yes</button>
-                                    <button class="btn btn-primary me-md-2" data-dismiss="modal">No</button>
+                                    {{-- <button class="btn btn-success" data-dismiss="modal" data-target="#qrModal"
+                                        data-toggle="modal">Yes</button> --}}
+                                    <button class="btn btn-primary me-md-2" data-dismiss="modal">Cancel</button>
                                     {{-- <button type="button" class="btn btn-secondary"
                                          data-bs-dismiss="modal">Close</button>
                                      <button type="button" class="btn btn-primary">Save changes</button> --}}
@@ -285,6 +269,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="modal-footer" style="text-align: center;">
+                                    <button class="btn btn-success" data-dismiss="modal">OK</button>
+                                    {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Cash Method-->
+                    <div class="modal fade" id="cashMethod" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h2>Payment Selection</h2>
+                                    <p>Please process the cash</p>
                                 </div>
                                 <div class="modal-footer" style="text-align: center;">
                                     <button class="btn btn-success" data-dismiss="modal">OK</button>
@@ -582,20 +584,6 @@
         function clr() {
             document.getElementById('result').value = "";
             totalSum = 0;
-        }
-
-        //Highlight options
-        function highlightPaymentMethod(method) {
-            var qrDiv = document.getElementById("qrDiv");
-            var cashDiv = document.getElementById("cashDiv");
-
-            if (method === "qr") {
-                qrDiv.classList.add("highlight");
-                cashDiv.classList.remove("highlight");
-            } else if (method === "cash") {
-                cashDiv.classList.add("highlight");
-                qrDiv.classList.remove("highlight");
-            }
         }
     </script>
 @endsection

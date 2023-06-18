@@ -2,73 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inventory;
-use App\Http\Requests\StoreInventoryRequest;
-use App\Http\Requests\UpdateInventoryRequest;
-use App\Views\ManageInventory;
+use App\Models\Sale;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 
-class InventoryController extends Controller
+class SalesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $inventories = Inventory::all();
+        $Cashiers = Sale::all();
 
-        return view('admin.inventory', ['inventories' => $inventories]);
-        
+        return view('manageSales.sales', ['cashier' => $Cashiers]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function reportSale()
     {
-       
+        $chart_options = [
+            'chart_title' => 'No. of Customers',
+            'report_type' => 'group_by_date',
+            'model' => 'App\Models\Sale',
+            'group_by_field' => 'created_at',
+            'group_by_period' => 'month',
+            'chart_type' => 'bar',
+        ];
+        $chart1 = new LaravelChart($chart_options);
 
-        return view('manageinventory.addinventory'); 
-        // return view('manageinventory.addinventory');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreInventoryRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Inventory $inventory)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Inventory $inventory)
-    {
-        return view('manageinventory.updateinventory');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateInventoryRequest $request, Inventory $inventory)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Inventory $inventory)
-    {
-        //
+        return view('manageSales.reportSales', compact('chart1'));
     }
 }
