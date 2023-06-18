@@ -65,6 +65,15 @@ Route::resource('admin/sales', CashierController::class);
 // Route::post('/save-newmeetup', [DeliveryControllers::class, 'save2']);
 
 
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 Route::prefix('/')
     ->middleware(['auth:sanctum', 'verified'])
     ->group(function () { });

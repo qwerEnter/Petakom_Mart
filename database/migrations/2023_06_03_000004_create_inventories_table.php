@@ -12,10 +12,12 @@ return new class extends Migration {
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('product_id');
-            $table->date('expired_date');
-            $table->integer('quantity');
-
+            $table->foreignId('product_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('price')->nullable();
+            $table->string('description')->nullable();
+            $table->date('expired_date')->nullable();
+            $table->integer('quantity')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
