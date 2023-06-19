@@ -260,7 +260,7 @@
                                                 </td>
                                                 <td style="border-style: solid;">
                                                     <div class="container" onclick="selectItem('Milo', 3.50, this)">
-                                                        <img src="{{ asset('assets/img/buah.jpg') }}" alt="Milo"
+                                                        <img src="{{ asset('assets/img/milo.png') }}" alt="Milo"
                                                             style="height: 100px; width: 100px;">
                                                         <h4>Milo Tin</h4>
                                                         <h5>RM3.50</h5>
