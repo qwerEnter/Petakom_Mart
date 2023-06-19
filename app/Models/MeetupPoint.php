@@ -13,14 +13,21 @@ class MeetupPoint extends Model
     use Searchable;
     use SoftDeletes;
 
+    //inside database meetup_points
     protected $fillable = ['location'];
+    //database name
+    protected $table = 'meetup_points';
 
+
+    
     protected $searchableFields = ['*'];
 
-    protected $table = 'meetup_points';
+    
 
     public function deliveries()
     {
         return $this->hasMany(Delivery::class);
     }
+
+
 }

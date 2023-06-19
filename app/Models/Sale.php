@@ -18,6 +18,7 @@ class Sale extends Model
         'product_id',
         'payment_method_id',
         'quantity',
+        'meetup_points',
         'total',
     ];
 
@@ -42,4 +43,10 @@ class Sale extends Model
     {
         return $this->belongsToMany(Receipt::class);
     }
+
+    public function meetupPoint()
+    {
+        return $this->belongsTo(MeetupPoint::class);
+    }
+
 }
