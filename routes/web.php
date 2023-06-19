@@ -4,6 +4,7 @@ use App\Http\Controllers\InventoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\DeliveryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,17 +21,20 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
-Route::get('admin/schedule', function () {
+Route::get('/admin/schedule', function () {
     return view('admin.schedule');
 });
 
-Route::get('cashier/schedule', function () {
-    return view('cashier.schedule-cashier');
-});
+Route::get('/admin/schedule','App\Http\Controllers\ScheduleController@index2');
+Route::get('/display','App\Http\Controllers\ScheduleController@index1'); //display schedule
+Route::get('/schedule-cashier','App\Http\Controllers\ScheduleController@indexcashier'); //page customer
+Route::get('/schedule','App\Http\Controllers\ScheduleController@index'); //page admin
+Route::post('/schedule/create','App\Http\Controllers\ScheduleController@create')->name('schedule.create');
+Route::post('/schedule-cashier/create','App\Http\Controllers\ScheduleController@createcashier')->name('schedule-cashier.create');
+Route::get('/schedule/{id}/edit','App\Http\Controllers\ScheduleController@edit')->name('schedules.edit');
+Route::post('/schedule/{id}/update','App\Http\Controllers\ScheduleController@update');
+Route::get('/schedule/{id}/delete','App\Http\Controllers\ScheduleController@delete');
 
-
-// Route::resource('admin/schedule', ScheduleController::class);
-Route::get('/schedule/{class}', 'ScheduleController@index');
 
 Route::resource('manageinventory/inventories', InventoryController::class);
 Route::post('/inventory/create', [InventoryController::class, 'create']);

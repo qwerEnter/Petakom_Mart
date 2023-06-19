@@ -10,41 +10,35 @@ Inventory | Admin
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Inventory Details</h3>
-                <td>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a class='btn btn-primary me-md-2' href="/inventory">Add</a>
-                    </div>
-                </td>
+                <h3 class="card-title">SCHEDULE DETAIL</h3>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table">
                         <thead class="text-primary">
                             <tr>
-                                <th>Inventory ID</th>
                                 <th>Name</th>
-                                <th>Price</th>
-                                <th>Expired Date</th>
-                                <th>Stock Level</th>
+                                <th>Matric Number</th>
+                                <th>Day</th>
+                                <th>Time</th>
                                 <th>Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($inventories as $inventory)
+                            @foreach ($schedules as $schedules)
 
                             <tr>
-                                <td>{{ $inventory->id }}</td>
-                                <td>{{ $inventory->name }}</td>
-                                <td>{{ $inventory->price }}</td>
-                                <td>{{ $inventory->expired_date }}</td>
-                                <td>{{ $inventory->quantity }}</td>
+                                <td>{{ $schedules->name }}</td>
+                                <td>{{ $schedules->matric_no }}</td>
+                                <td>{{ $schedules->day }}</td>
+                                <td>{{ $schedules->time }}</td>
                                 <td>
                                     <div class='btn-group'>
-                                        <a type='button' class='btn btn-success' href="/inventory/{{$inventory->id}}/edit">Edit</a>
+                                        <a type='button' class='btn btn-success' href="/schedule/{{$schedules->id}}/edit">Edit</a>
                                     </div>
                                 </td>
+                                
                             </tr>
                             @endforeach
                         </tbody>

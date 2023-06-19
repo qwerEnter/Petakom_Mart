@@ -4,6 +4,8 @@
 Schedule | Admin
 @endsection
 
+
+
 @section('content')
 
 <style>
@@ -232,7 +234,6 @@ Schedule | Admin
             <h2 id="popupTitle"></h2>
                 <div class="popup-buttons">
                     <button onclick="showPopup1('add')">Add</button>
-                    <button  onclick="display('display')">Display List</button>
                 </div>
             </div>
         </div>
@@ -240,7 +241,7 @@ Schedule | Admin
         <div class="popup-overlay" id="popupOverlay1">
             <div class="popup">
                 <h2>Add Schedule</h2>
-                <form class="popup-form" action="{{ route('schedule.create') }}" method="POST">
+                <form class="popup-form" action="{{ route('schedule-cashier.create') }}" method="POST">
                 @csrf
                 <!-- Include your form fields here -->
                 <table class="table">
@@ -338,11 +339,6 @@ Schedule | Admin
             document.getElementById('popupOverlay').style.display = 'none';
             document.getElementById('popupOverlay1').style.display = 'none'; 
         }
-
-        function display() {
-            window.location.href="display";
-        }
-
     </script>
 
 

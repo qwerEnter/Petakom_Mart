@@ -4,6 +4,8 @@
 Schedule | Admin
 @endsection
 
+
+
 @section('content')
 
 <style>

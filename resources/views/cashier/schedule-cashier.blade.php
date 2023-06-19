@@ -51,7 +51,7 @@ Schedule | Admin
         .popup {
             background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 4px;
         }
 
         .popup-buttons {
@@ -93,7 +93,9 @@ Schedule | Admin
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
+                        
                     <table>
+
                       <tr>
                           <th></th>
                           <th>08:00 - 10:00</th>
@@ -102,61 +104,71 @@ Schedule | Admin
                           <th>14:00 - 16:00</th>
                           <th>16:00 - 18:00</th>
                       </tr>
+                        
                       <tr>
                           <th>Monday</th>
-                          <td onclick="showPopup('Class A')">Class A</td>
-                          <td onclick="showPopup('Class B')">Class B</td>
-                          <td onclick="showPopup('Class C')">Class C</td>
-                          <td onclick="showPopup('Class D')">Class D</td>
-                          <td onclick="showPopup('Class E')">Class E</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '08:00 - 10:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Monday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '10:00 - 12:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Monday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '12:00 - 14:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Monday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '14:00 - 16:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Monday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '16:00 - 18:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Monday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Tuesday</th>
-                          <td onclick="showPopup('Class F')">Class F</td>
-                          <td onclick="showPopup('Class G')">Class G</td>
-                          <td onclick="showPopup('Class H')">Class H</td>
-                          <td onclick="showPopup('Class I')">Class I</td>
-                          <td onclick="showPopup('Class J')">Class J</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '08:00 - 10:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '10:00 - 12:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '12:00 - 14:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '14:00 - 16:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '16:00 - 18:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Wednesday</th>
-                          <td onclick="showPopup('Class K')">Class K</td>
-                          <td onclick="showPopup('Class L')">Class L</td>
-                          <td onclick="showPopup('Class M')">Class M</td>
-                          <td onclick="showPopup('Class N')">Class N</td>
-                          <td onclick="showPopup('Class O')">Class O</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '08:00 - 10:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '10:00 - 12:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '12:00 - 14:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '14:00 - 16:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '16:00 - 18:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Thursday</th>
-                          <td onclick="showPopup('Class P')">Class P</td>
-                          <td onclick="showPopup('Class Q')">Class Q</td>
-                          <td onclick="showPopup('Class R')">Class R</td>
-                          <td onclick="showPopup('Class S')">Class S</td>
-                          <td onclick="showPopup('Class T')">Class T</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '08:00 - 10:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Thursday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '10:00 - 12:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Thursday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '12:00 - 14:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Thursday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '14:00 - 16:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Thursday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '16:00 - 18:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Thursday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Friday</th>
-                          <td onclick="showPopup('Class U')">Class U</td>
-                          <td onclick="showPopup('Class V')">Class V</td>
-                          <td onclick="showPopup('Class W')">Class W</td>
-                          <td onclick="showPopup('Class X')">Class X</td>
-                          <td onclick="showPopup('Class Y')">Class Y</td>
-                      </tr>
-                      <tr>
-                          <th>Saturday</th>
-                          <td onclick="showPopup('Class Z')">Class Z</td>
-                          <td onclick="showPopup('Class AA')">Class AA</td>
-                          <td onclick="showPopup('Class BB')">Class BB</td>
-                          <td onclick="showPopup('Class CC')">Class CC</td>
-                          <td onclick="showPopup('Class DD')">Class DD</td>
-                      </tr>
-                      <tr>
-                          <th>Sunday</th>
-                          <td onclick="showPopup('Class EE')">Class EE</td>
-                          <td onclick="showPopup('Class FF')">Class FF</td>
-                          <td onclick="showPopup('Class GG')">Class GG</td>
-                          <td onclick="showPopup('Class HH')">Class HH</td>
-                          <td onclick="showPopup('Class II')">Class II</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '08:00 - 10:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Friday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '10:00 - 12:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Friday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '12:00 - 14:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Friday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '14:00 - 16:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Friday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '16:00 - 18:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Friday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                   </table>
                 </div>
@@ -177,23 +189,84 @@ Schedule | Admin
         <div class="popup-overlay" id="popupOverlay1">
             <div class="popup">
                 <h2>Add Schedule</h2>
-                <form class="popup-form" onsubmit="submitForm(event)">
-                    <input type="text" id="nameInput" placeholder="Name" required><br>
-                    <input type="text" id="studentIdInput" placeholder="Student ID" required><br>
-                    <div>
-                        <label>
-                            <input type="radio" name="workType" value="full-time" required> Full-time
-                        </label>
-                        <label>
-                            <input type="radio" name="workType" value="part-time" required> Part-time
-                        </label>
-                    </div>
-                    <input type="date" id="dateInput" required><br>
-                    <input type="time" id="timeInput" required><br>
-                    <div class="popup-buttons">
-                        <button type="submit">Submit</button>
-                        <button type="button" onclick="closePopup()">Cancel</button>
-                    </div>
+                <form class="popup-form" action="{{ route('schedule-cashier.create') }}" method="POST">
+                @csrf
+                <!-- Include your form fields here -->
+                <table class="table">
+                    <thead class=" text-primary">
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="colFormLabelLg" class="col-form-label lg">Name:</label>
+                            <td class="col-md-9">
+                                <input type="text" class="form-control" id="colFormLabelLg" value="" id="name" placeholder="Name" name="name" required>
+                            </td>
+                            </td>
+                        </tr>
+                        <td>
+                            <label for="colFormLabelLg" class="col-form-label lg">Matric Number:</label>
+                        <td class="col-md-9">
+                            <input type="text" class="form-control" id="colFormLabelLg" id="matric_no" placeholder="Student ID" value="" name="matric_no" required>
+                        </td>
+                        </td>
+                        <tr>
+                            <td>
+                                <label for="colFormLabelLg" class="col-form-label lg">Work Type :</label>
+                                <td class="col-md-9">
+                                    <div id="employment_type" id="colFormLabelLg">
+                                        <label>
+                                            <input type="radio" id="employment_type" name="employment_type" value="full-time" required> Full-time
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="employment_type" name="employment_type" value="part-time" required> Part-time
+                                        </label>
+                                    </div>
+                                </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <label for="colFormLabelLg" class="col-form-label lg">Day :</label>
+                                <td class="col-md-9">
+                                <div id="day" id="colFormLabelLg" >
+                                <select id="day" name="day">
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                </select>
+                                </div>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <label for="colFormLabelLg" class="col-form-label lg">Time:</label>
+                                <td class="col-md-9">
+                                <div id="time" id="colFormLabelLg" >
+                                <select id="time" name="time">
+                                    <option value="08:00 - 10:00">08:00 - 10:00</option>
+                                    <option value="10:00 - 12:00">10:00 - 12:00</option>
+                                    <option value="12:00 - 14:00">12:00 - 14:00</option>
+                                    <option value="14:00 - 16:00">14:00 - 16:00</option>
+                                    <option value="16:00 - 18:00">16:00 - 18:00</option>
+                                </select>
+                                </div>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="popup-buttons">
+                            <button type="submit">Submit</button>
+                            </td>
+                            <td class="popup-buttons">
+                            <button type="button" onclick="closePopup()">Cancel</button>
+                            </td>
+                        </tr>   
+                    </tbody>
+                </table>   
                 </form>
             </div>
         </div>
@@ -208,37 +281,22 @@ Schedule | Admin
         function performAction(action) {
             // Replace with your logic for handling the action
             alert(action + ' action performed!');
+            closePopup();
         }
 
         function showPopup1() {
-            document.getElementById('popupOverlay1').style.display = 'compact';
+            document.getElementById('popupOverlay1').style.display = 'flex';
+        }
+
+        function showPopup2() {
+            document.getElementById('popupOverlay2').style.display = 'flex';
         }
 
         function closePopup() {
             document.getElementById('popupOverlay').style.display = 'none';
-            document.getElementById('popupOverlay1').style.display = 'none';
+            document.getElementById('popupOverlay1').style.display = 'none'; 
+            document.getElementById('popupOverlay2').style.display = 'none'; 
         }
-
-        function submitForm(event) {
-            event.preventDefault();
-
-            // Get the input values
-            var name = document.getElementById('nameInput').value;
-            var studentId = document.getElementById('studentIdInput').value;
-            var workType = document.querySelector('input[name="workType"]:checked').value;
-            var date = document.getElementById('dateInput').value;
-            var time = document.getElementById('timeInput').value;
-
-            // You can perform further processing with the name and studentId
-            console.log('Name:', name);
-            console.log('Student ID:', studentId);
-            console.log('Work Type:', workType);
-            console.log('Date:', date);
-            console.log('Time:', time);
-
-            // Close the pop-up
-            closePopup();
-        }
 
     </script>
 
