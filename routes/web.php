@@ -21,16 +21,13 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/admin/schedule', function () {
-    return view('admin.schedule');
-});
 
-Route::get('/admin/schedule','App\Http\Controllers\ScheduleController@index2');
-Route::get('/display','App\Http\Controllers\ScheduleController@index1'); //display schedule
-Route::get('/schedule-cashier','App\Http\Controllers\ScheduleController@indexcashier'); //page customer
+Route::get('/manageschedule/schedule','App\Http\Controllers\ScheduleController@index2');
+Route::get('manageschedule/display','App\Http\Controllers\ScheduleController@index1'); //display schedule
+Route::get('manageschedule/schedule-cashier','App\Http\Controllers\ScheduleController@indexcashier'); //page customer
 Route::get('/schedule','App\Http\Controllers\ScheduleController@index'); //page admin
 Route::post('/schedule/create','App\Http\Controllers\ScheduleController@create')->name('schedule.create');
-Route::post('/schedule-cashier/create','App\Http\Controllers\ScheduleController@createcashier')->name('schedule-cashier.create');
+Route::post('/manageschedule/schedule-cashier/create','App\Http\Controllers\ScheduleController@createcashier')->name('schedule-cashier.create');
 Route::get('/schedule/{id}/edit','App\Http\Controllers\ScheduleController@edit')->name('schedules.edit');
 Route::post('/schedule/{id}/update','App\Http\Controllers\ScheduleController@update');
 Route::get('/schedule/{id}/delete','App\Http\Controllers\ScheduleController@delete');

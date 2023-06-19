@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Inventory | Admin
+Schedule | Admin
 @endsection
 
 @section('content')

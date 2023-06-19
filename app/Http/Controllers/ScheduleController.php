@@ -41,7 +41,7 @@ class ScheduleController extends Controller
     public function createcashier(Request $request)
     {
         Schedule::create($request->all());
-        return redirect('/schedule-cashier')->with('success', 'Success Create');
+        return redirect('manageschedule/schedule-cashier')->with('success', 'Success Create');
     }
 
     public function edit($id)
