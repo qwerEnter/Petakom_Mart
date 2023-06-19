@@ -304,7 +304,7 @@
                                                 </td>
                                                 <td style="border-style: solid;">
                                                     <div class="container" onclick="selectItem('color', 0.50, this)">
-                                                        <img src="{{ asset('assets/img/apollo.jpg') }}" alt="color"
+                                                        <img src="{{ asset('assets/img/color.jpg') }}" alt="color"
                                                             style="height: 100px; width: 100px;">
                                                         <h4>Print Color</h4>
                                                         <h5>RM0.50</h5>
