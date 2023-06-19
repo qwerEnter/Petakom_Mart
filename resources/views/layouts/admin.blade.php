@@ -64,7 +64,7 @@
 
 
         <li @if(Request::is('admin/sales')) class="active" @endif>
-        <a href="{{ url('/admin/sales') }}">
+        <a href="{{ url('/sales') }}">
          <i class="now-ui-icons shopping_credit-card"></i>
         <p>Sales</p>
         </a>
@@ -76,8 +76,8 @@
         <p>Delivery</p>
         </a>
         </li>
-          
-          
+
+
         </ul>
       </div>
     </div>
@@ -107,7 +107,7 @@
           </button>
 
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-              
+
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons users_single-02"></i>
@@ -125,15 +125,15 @@
 
       <div class="panel-header panel-header-sm">
       </div>
-      
+
       <div class="content">
-      @yield('content')  
+      @yield('content')
       </div>
 
-      
 
 
-      
+
+
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -150,7 +150,7 @@
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  
+
   <!-- untuk modal add cashier -->
   <script>
   $(document).ready(function() {
@@ -172,12 +172,8 @@
 </script>
 
 
-<<<<<<< HEAD
-@yield('scripts')
-=======
 
   @yield('scripts')
   @yield('styles')
->>>>>>> 306b0884018c0fa3122b5d49135e1e9473e5b54d
 </body>
 </html>

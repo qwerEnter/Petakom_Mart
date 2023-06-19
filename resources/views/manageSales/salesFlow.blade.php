@@ -96,7 +96,7 @@
                     <h3 class="card-title">Opening/Closing Cash Flow</h3>
                     <td>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a class='btn btn-primary me-md-2' href="/admin/sales">Back</a>
+                            <a class='btn btn-primary me-md-2' href="{{ route('manageSales.sales') }}">Add Sales</a>
                         </div>
                     </td>
                 </div>
@@ -251,6 +251,30 @@
                 {{-- <div class="card-body" style="float= right;">
 
                 </div> --}}
+            </div>
+        </div>
+        {{-- <p>{{ $payment_total->id }}</p> --}}
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">List of Sales</h3>
+                </div>
+                <table>
+                    <tr>
+                        <th>No</th>
+                        <th>Money</th>
+                        <th>Modifier</th>
+
+                    </tr>
+                    @foreach ($sales as $sale)
+                        <tr>
+                            <td>{{ $sale->id }}</td>
+                            <td>{{ $sale->paymentTotal }}</td>
+                            <td><a href="/sales/{{$sale->id}}/delete" onclick="return confirm('Are You Sure?')"><button type="button">Delete</button></a></td>
+                        </tr>
+                    @endforeach
+
+                </table>
             </div>
         </div>
     </div>

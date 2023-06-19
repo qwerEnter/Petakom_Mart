@@ -27,12 +27,11 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('admin.dashboard');
 });
-
-Route::get('/salesFlow', function () {
-    return view('manageSales.salesFlow');
-});
-
+Route::get('/sales', 'App\Http\Controllers\SalesController@index')->name('manageSales.salesFlow');
 Route::get('/reportSales', [SalesController::class, 'reportSale']);
+Route::get('/sales/create', 'App\Http\Controllers\SalesController@create')->name('manageSales.sales');
+Route::post('/sales', 'App\Http\Controllers\SalesController@store')->name('sales.store');
+Route::get('/sales/{id}/delete', [SalesController::class, 'delete']);
 
 
 Route::resource('manageinventory/inventories', InventoryController::class);
@@ -48,7 +47,7 @@ Route::get('/inventory', function () {
 
 Route::resource('admin/delivery', DeliveryController::class);
 
-Route::resource('admin/sales', CashierController::class);
+// Route::resource('admin/sales', CashierController::class);
 
 
 // //for display cashier catch index
