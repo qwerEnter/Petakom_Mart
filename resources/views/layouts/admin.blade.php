@@ -70,8 +70,8 @@
         </a>
         </li>
 
-        <li @if(Request::is('admin/delivery')) class="active" @endif>
-        <a href="{{ url('/admin/delivery') }}">
+        <li @if(Request::is('managedelivery/adminactivity')) class="active" @endif>
+        <a href="{{ url('/managedelivery/adminactivity') }}">
          <i class="now-ui-icons shopping_box"></i>
         <p>Delivery</p>
         </a>
@@ -127,8 +127,13 @@
       </div>
       
       <div class="content">
-      @yield('content')  
+      @yield('content') 
+    
       </div>
+      <div class="additional-content">
+      @yield('content2')
+      
+        </div>
 
       
 
@@ -151,11 +156,12 @@
   <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   
-  <!-- untuk modal add cashier -->
-  <script>
+
+  <!-- untuk modal add meetup -->
+<script>
   $(document).ready(function() {
     $('#exampleModal').modal('hide'); // Optional: Hide the modal by default
-    $('.btn-primary[data-bs-toggle="modal"]').click(function() {
+    $('.btn-primary[data-toggle="modal"]').click(function() {
       $('#exampleModal').modal('show'); // Show the modal when the button is clicked
     });
   });
@@ -165,19 +171,23 @@
 <script>
   $(document).ready(function() {
     $('#exampleModal2').modal('hide'); // Optional: Hide the modal by default
-    $('.btn-primary[data-bs-toggle="modal2"]').click(function() {
+    $('.btn-primary[data-toggle="modal2"]').click(function() {
       $('#exampleModal2').modal('show'); // Show the modal when the button is clicked
     });
   });
 </script>
 
 
-<<<<<<< HEAD
+<!-- SCript -->
+<script src = "{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
+<script src = "{{asset('frontend/bootstrap5.bundle.min.js')}}"></script>
 @yield('scripts')
-=======
 
-  @yield('scripts')
-  @yield('styles')
->>>>>>> 306b0884018c0fa3122b5d49135e1e9473e5b54d
+
+
+
+
+@yield('styles')
+
 </body>
 </html>

@@ -11,9 +11,8 @@ class Employee extends Model
 {
     use HasFactory;
     use Searchable;
-    use SoftDeletes;
 
-    protected $fillable = ['user_id', 'matric_no', 'employment_type'];
+    protected $fillable = ['user_id', 'matric_no'];
 
     protected $searchableFields = ['*'];
 
@@ -22,8 +21,16 @@ class Employee extends Model
         return $this->belongsTo(User::class);
     }
 
+    
     public function shifts()
     {
         return $this->hasMany(Shift::class);
     }
+
+    public function order()
+    {
+        return $this->hasMany(Shift::class);
+    }
+
+    
 }

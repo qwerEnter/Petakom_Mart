@@ -21,14 +21,17 @@ class Delivery extends Model
 
     protected $searchableFields = ['*'];
 
-    public function receipt()
-    {
-        return $this->belongsTo(Receipt::class);
-    }
+    
 
     public function meetupPoint()
     {
         return $this->belongsTo(MeetupPoint::class);
+    }
+
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 
 }
