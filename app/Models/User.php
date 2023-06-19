@@ -58,4 +58,25 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
+
+    public function isSuperAdmin(): bool
+    {
+        return in_array($this->email, config('auth.super_admins'));
+    }
+
+    public function employee()
+    {
+        return $this->hasOne(Employee::class);
+    }
+
 }

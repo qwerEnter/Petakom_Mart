@@ -28,4 +28,8 @@ class Inventory extends Model
     {
         return $this->belongsTo(Product::class);
     }
+    public function inventory()
+{
+    return $this->belongsTo(Inventory::class);
+}
 }
