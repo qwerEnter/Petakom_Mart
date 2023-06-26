@@ -5,7 +5,6 @@ use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\DeliveryController;
 
 /*
 |--------------------------------------------------------------------------
