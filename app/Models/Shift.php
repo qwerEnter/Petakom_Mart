@@ -11,7 +11,9 @@ class Shift extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['employee_id', 'date', 'time'];
+    protected $table = 'shifts'; 
+
+    protected $fillable = ['user_id', 'name','matric_no', 'employment_type','employee_id', 'date', 'time'];
 
     protected $searchableFields = ['*'];
 

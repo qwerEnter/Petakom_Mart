@@ -47,8 +47,8 @@
         </a>
         </li>
 
-        <li @if(Request::is('admin/schedule')) class="active" @endif>
-        <a href="{{ url('/admin/schedule') }}">
+        <li @if(Request::is('manageschedule/schedule')) class="active" @endif>
+        <a href="{{ url('/manageschedule/schedule') }}">
          <i class="now-ui-icons ui-1_calendar-60"></i>
         <p>Schedule</p>
         </a>
