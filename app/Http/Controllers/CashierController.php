@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sale;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,9 @@ class CashierController extends Controller
     //view cashier
     public function index()
     {
-        $data = Schedule::all(); // Retrieve all schedules from the database
-        return view('admin.delivery', compact('data'));
+        $Cashiers = Sale::all();
+
+        return view('manageSales.sales', ['cashier' => $Cashiers]);
     }
 
 
@@ -30,7 +32,7 @@ class CashierController extends Controller
         return redirect('/admin/delivery')->with('success', 'Data added');
     }
 
-    
+
 //delete cashier
     public function delete($id)
 {
@@ -43,6 +45,6 @@ class CashierController extends Controller
     }
 }
 
-    
-    
+
+
 }
