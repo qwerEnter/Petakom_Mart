@@ -4,6 +4,8 @@
 Schedule | Admin
 @endsection
 
+
+
 @section('content')
 
 <style>
@@ -85,7 +87,7 @@ Schedule | Admin
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h1 class="card-title" align="center"> Schedule</h1>
+                <h4 class="card-title" align="center"> Schedule</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -105,126 +107,74 @@ Schedule | Admin
                         
                       <tr>
                           <th>Monday</th>
-                          <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '08:00 - 10:00')->first()?->name}}',)">
-                          {{ $schedules->where('day', 'Monday')->where('time', '08:00 - 10:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Monday')->where('time', '08:00 - 10:00')->first()?->matric_no }}
-                        </td>
+                          <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '08:00 - 10:00')->first()?->name }}')">
+                          {{ $schedules->where('day', 'Monday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '10:00 - 12:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Monday')->where('time', '10:00 - 12:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Monday')->where('time', '10:00 - 12:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Monday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '12:00 - 14:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Monday')->where('time', '12:00 - 14:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Monday')->where('time', '12:00 - 14:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Monday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '14:00 - 16:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Monday')->where('time', '14:00 - 16:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Monday')->where('time', '14:00 - 16:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Monday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Monday')->where('time', '16:00 - 18:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Monday')->where('time', '16:00 - 18:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Monday')->where('time', '16:00 - 18:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Monday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Tuesday</th>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '08:00 - 10:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '08:00 - 10:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '08:00 - 10:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '10:00 - 12:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '10:00 - 12:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '10:00 - 12:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '12:00 - 14:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '12:00 - 14:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '12:00 - 14:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '14:00 - 16:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '14:00 - 16:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '14:00 - 16:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Tuesday')->where('time', '16:00 - 18:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '16:00 - 18:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Tuesday')->where('time', '16:00 - 18:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Tuesday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Wednesday</th>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '08:00 - 10:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '08:00 - 10:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '08:00 - 10:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '10:00 - 12:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '10:00 - 12:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '10:00 - 12:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '12:00 - 14:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '12:00 - 14:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '12:00 - 14:0')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '14:00 - 16:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '14:00 - 16:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '14:00 - 16:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Wednesday')->where('time', '16:00 - 18:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '16:00 - 18:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Wednesday')->where('time', '16:00 - 18:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Wednesday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Thursday</th>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '08:00 - 10:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Thursday')->where('time', '08:00 - 10:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Thursday')->where('time', '08:00 - 10:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Thursday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '10:00 - 12:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Thursday')->where('time', '10:00 - 12:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Thursday')->where('time', '10:00 - 12:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Thursday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '12:00 - 14:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Thursday')->where('time', '12:00 - 14:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Thursday')->where('time', '12:00 - 14:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Thursday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '14:00 - 16:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Thursday')->where('time', '14:00 - 16:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Thursday')->where('time', '14:00 - 16:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Thursday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Thursday')->where('time', '16:00 - 18:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Thursday')->where('time', '16:00 - 18:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Thursday')->where('time', '16:00 - 18:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Thursday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                       <tr>
                           <th>Friday</th>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '08:00 - 10:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Friday')->where('time', '08:00 - 10:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Friday')->where('time', '08:00 - 10:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Friday')->where('time', '08:00 - 10:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '10:00 - 12:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Friday')->where('time', '10:00 - 12:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Friday')->where('time', '10:00 - 12:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Friday')->where('time', '10:00 - 12:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '12:00 - 14:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Friday')->where('time', '12:00 - 14:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Friday')->where('time', '12:00 - 14:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Friday')->where('time', '12:00 - 14:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '14:00 - 16:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Friday')->where('time', '14:00 - 16:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Friday')->where('time', '14:00 - 16:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Friday')->where('time', '14:00 - 16:00')->first()?->name }}</td>
                           <td onclick="showPopup('{{ $schedules->where('day', 'Friday')->where('time', '16:00 - 18:00')->first()?->name }}')">
-                          {{ $schedules->where('day', 'Friday')->where('time', '16:00 - 18:00')->first()?->name }}<br>
-                          {{ $schedules->where('day', 'Friday')->where('time', '16:00 - 18:00')->first()?->matric_no }}
-                        </td>
+                          {{ $schedules->where('day', 'Friday')->where('time', '16:00 - 18:00')->first()?->name }}</td>
                       </tr>
                   </table>
                 </div>
               </div>
             </div>
           </div>
-
-          
           <!-- Pop-up -->
           <div class="popup-overlay" id="popupOverlay">
             <div class="popup">
@@ -232,7 +182,6 @@ Schedule | Admin
             <h2 id="popupTitle"></h2>
                 <div class="popup-buttons">
                     <button onclick="showPopup1('add')">Add</button>
-                    <button  onclick="display('display')">Display List</button>
                 </div>
             </div>
         </div>
@@ -240,7 +189,7 @@ Schedule | Admin
         <div class="popup-overlay" id="popupOverlay1">
             <div class="popup">
                 <h2>Add Schedule</h2>
-                <form class="popup-form" action="{{ route('schedule.create') }}" method="POST">
+                <form class="popup-form" action="{{ route('schedule-cashier.create') }}" method="POST">
                 @csrf
                 <!-- Include your form fields here -->
                 <table class="table">
@@ -251,7 +200,7 @@ Schedule | Admin
                             <td>
                                 <label for="colFormLabelLg" class="col-form-label lg">Name:</label>
                             <td class="col-md-9">
-                                <input type="text" class="form-control" id="colFormLabelLg" value="" name="name" id="name" placeholder="Name" required>
+                                <input type="text" class="form-control" id="colFormLabelLg" value="" id="name" placeholder="Name" name="name" required>
                             </td>
                             </td>
                         </tr>
@@ -329,18 +278,24 @@ Schedule | Admin
             document.getElementById('popupOverlay').style.display = 'flex';
         }
 
+        function performAction(action) {
+            // Replace with your logic for handling the action
+            alert(action + ' action performed!');
+            closePopup();
+        }
+
         function showPopup1() {
             document.getElementById('popupOverlay1').style.display = 'flex';
         }
 
+        function showPopup2() {
+            document.getElementById('popupOverlay2').style.display = 'flex';
+        }
 
         function closePopup() {
             document.getElementById('popupOverlay').style.display = 'none';
             document.getElementById('popupOverlay1').style.display = 'none'; 
-        }
-
-        function display() {
-            window.location.href="display";
+            document.getElementById('popupOverlay2').style.display = 'none'; 
         }
 
     </script>

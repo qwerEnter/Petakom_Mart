@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CashFlowSeeder::class);
         $this->call(DeliverySeeder::class);
-        $this->call(EmployeeSeeder::class);
         $this->call(InventorySeeder::class);
         $this->call(MeetupPointSeeder::class);
         $this->call(PaymentMethodSeeder::class);
@@ -29,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ReceiptSeeder::class);
         $this->call(SaleSeeder::class);
         $this->call(ShiftSeeder::class);
+        $this->call(ScheduleSeeder::class);
         $this->call(UserSeeder::class);
     }
 }
