@@ -22,8 +22,6 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
-<<<<<<< HEAD
-=======
 
 Route::get('/manageschedule/schedule','App\Http\Controllers\ScheduleController@index2');
 Route::get('manageschedule/display','App\Http\Controllers\ScheduleController@index1'); //display schedule
@@ -51,7 +49,7 @@ Route::get('/inventory', function () {
 
 Route::resource('admin/delivery', DeliveryController::class);
 
->>>>>>> eb0dfba17e6a6eeef394b5ac4fca6a82e891e34f
+
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', function () {
         return view('dashboard');
@@ -61,7 +59,7 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::prefix('/')
     ->middleware(['auth:sanctum', 'verified'])
     ->group(function () { });
-<<<<<<< HEAD
+
 
 
 //display class
@@ -92,5 +90,3 @@ Route::get('edit-order/{id}', [DeliveryController::class, 'Cashier']);
 Route::put('/managedelivery/update-order', [DeliveryController::class, 'AddCashier']);
 
 // END OF MANAGE DELIVERY
-=======
->>>>>>> eb0dfba17e6a6eeef394b5ac4fca6a82e891e34f
