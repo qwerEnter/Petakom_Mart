@@ -43,6 +43,7 @@ Inventory | Admin
                                 <td>
                                     <div class='btn-group'>
                                         <a type='button' class='btn btn-success' href="/inventory/{{$inventory->id}}/edit">Edit</a>
+
                                     </div>
                                 </td>
                             </tr>
